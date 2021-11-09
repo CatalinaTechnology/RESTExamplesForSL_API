@@ -1,0 +1,21 @@
+## This is a bare minimum to create a new customer.  You can pass a CustId in the myCustomer object in the request body.
+## But it must be unique.  If it already exists, you will get an error.
+
+
+curl --location --request POST 'http://YOURSERVER/ctDynamicsSL/api/financial/accountsReceivable/customer' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'SiteID: YOURSITEID' \
+--data-raw '{
+  "myCustomer": {
+    "Name": "Ted Danson",
+    "Addr1": "84 Beacon St",
+    "Addr2": "",
+    "City": "Boston",
+    "State":"MA",
+    "Zip": "02108",
+    "ClassId": "COMM"
+  }
+}'

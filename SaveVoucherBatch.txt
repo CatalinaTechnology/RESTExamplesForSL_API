@@ -1,0 +1,47 @@
+## This will create a voucher batch with multiple APDoc and their multiple APTran records.
+
+curl --location --request POST 'http:/YOURSERVER/ctDynamicsSL/api/financial/accountsPayable/voucherAndAdjustment/batch' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: 0060' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+    "CpnyID":"0060",
+    "notes": "Batch Notes",
+    "myAPDoc": [
+        {
+            "DocDesc":"Advertising costs 10-2021",
+            "VendId":"E01181",
+            "CuryOrigDocAmt":303.81,
+            "OrigDocAmt":303.81,
+            "CuryDocBal":303.81,
+            "DocBal":303.81,
+            "Status":"A",
+            "CpnyID":"0060",
+            "InvcDate":"11/01/21",
+            "InvcNbr":"9240529293",
+            "Acct":"1030",
+            "Sub":"000000000000",
+            "notes": "Doc Notes",
+            "myAPTran": [
+                {
+                    "CpnyID": "0060",
+                    "Acct": "1030",
+                    "Sub": "000000000000",
+                    "TranDesc": "Advertising costs 10-2021",
+                    "TranDate": "11/08/21'\''",
+                    "LineType": "N",
+                    "DrCr": "D",
+                    "Qty": 1,
+                    "CuryUnitPrice": 303.81,
+                    "TranAmt": 303.81,
+                    "CuryTranAmt": 303.81,
+                    "VendId": "E01181",
+                    "notes": "Tran Notes"
+                }
+            ]
+        }
+    ]
+}
+'

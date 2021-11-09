@@ -1,0 +1,18 @@
+## This will only update Addr1, Addr2, City, State, and Zip. Only pass fields you want updated.  All other fields
+## will not change if you dont pass them in a PATCH.
+
+curl --location --request PATCH 'http://YOURSERVER/ctDynamicsSL/api/financial/accountsReceivable/customer/C300' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: 0060' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+  "myCustomer": {
+    "Addr1": "84 Beacon St",
+    "Addr2": "",
+    "City": "Boston",
+    "State":"MA",
+    "Zip": "02108",
+  }
+}'

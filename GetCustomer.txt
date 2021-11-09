@@ -1,0 +1,9 @@
+## NOTE:  You would replace the "C300" in the endpoint with the CustID you want to search for
+
+
+curl --location --request GET 'http://YOURSERVER/ctDynamicsSL/api/financial/accountsReceivable/customer/C300' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: 0060' \
+--header 'SiteID: YOURSITEID'
