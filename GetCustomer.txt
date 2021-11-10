@@ -5,5 +5,5 @@ curl --location --request GET 'http://YOURSERVER/ctDynamicsSL/api/financial/acco
 --header 'Authorization: Basic YOURAUTH' \
 --header 'Cache-Control: no-cache' \
 --header 'Content-Type: application/json' \
---header 'CpnyID: 0060' \
+--header 'CpnyID: YOURCPNYID' \
 --header 'SiteID: YOURSITEID'

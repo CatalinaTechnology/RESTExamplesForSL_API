@@ -1,7 +1,6 @@
-## replace O0005332 with the sales order you want to retrieve
+## will retrieve a listing of all Quick Queries configured in SL
 
-
-curl --location --request POST 'http://YOURSERVER/ctDynamicsSL/api/orders/sales/order/O0005332' \
+curl --location --request GET 'http://YOURSERVER/ctDynamicsSL/api/quickQuery' \
 --header 'Authorization: Basic YOURAUTH' \
 --header 'Cache-Control: no-cache' \
 --header 'Content-Type: application/json' \

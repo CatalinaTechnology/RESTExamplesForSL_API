@@ -1,0 +1,17 @@
+## This will run the quick query "QQ_Account" and then filter to only return accounts with an "Account Number" = "1030"
+
+
+curl --location --request POST 'http://YOURSERVER/ctDynamicsSL/api/quickQuery/QQ_Account' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: YOURSERVER' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+"filters": [{
+"name": "Account Number",
+"value": "1030",
+"comparisonType": "="
+}
+]
+}'
