@@ -1,0 +1,67 @@
+## a relatively minimal order with header information. and minimum line item information.
+## NOTE the first line item is going to allow SL to automatically price the line item
+## the second line item is forcing a price override.
+
+
+curl --location --request POST 'http://YOURSERVER/ctDynamicsSL/api/orders/sales/order' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: 0060' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+	"CustID": "C300",
+	"ShipViaID": "UPS",
+	"SOTypeID": "SO",
+    "CpnyID": "0060",
+    "CustOrdNbr": "PO Number 1234",
+    "ShiptoID": "DEFAULT",
+    "ShipAttn": "Marvin the Robot",
+    "ShipName": "",
+    "shipSalut": "",
+    "ShipAddr1": "232 Harbor Blvd",
+    "ShipAddr2": "Suite 202",
+    "ShipCity": "Redondo Beach",
+    "ShipState": "CA",
+    "ShipZip": "90277",
+    "SlsperID": "BW",
+    "ShipCountry": "",
+    "ShipPhone": "3105551212",
+    "BillSalut": "",
+    "BillAddr1": "232 Harbor Blvd",
+    "BillAddr2": "Suite 202",
+    "BillAddrSpecial": 0,
+    "BillAttn": "",
+    "BillCity": "",
+    "BillCountry": "",
+    "BillName": "",
+    "BillPhone": "",
+    "BillState": "",
+    "BillZip": "90277",
+    "orderItems": [
+        {
+        	"InvtID":"0RCRANK",
+        	"QtyOrd":1,
+        	"CurySlsPrice":-999876,  // use -999876 if you want SL to calculate or the actual amount if you want to override
+        	"CuryCost":-999876,  // use -999876 if you want SL to calculate or the actual amount if you want to override
+        	"Taxable":1,
+            "Notes": "Line Item Notes are here"
+        },
+        {
+        	"InvtID":"0RBOLT                        ",
+        	"QtyOrd":2,
+        	"CurySlsPrice":25,  // use -999876 if you want SL to calculate or the actual amount if you want to override
+        	"CuryCost":-999876,  // use -999876 if you want SL to calculate or the actual amount if you want to override
+        	"Taxable":1,
+            "Notes": "Line Item Notes are here"
+        }
+    ],
+    "notes": "These are header notes",
+    "miscChargesClass": [
+        {
+            "notes": "",
+            "CuryMiscChrg": -9.75,
+            "MiscChrgID": "GEN"
+        }
+    ]
+}'
