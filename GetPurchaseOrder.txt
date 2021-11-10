@@ -1,0 +1,9 @@
+## NOTE: YOu would change the PO11111113 in the endpoint to the PO you are looking for.
+
+
+curl --location --request GET 'http://YOURSERVER/ctDynamicsSL/api/orders/purchasing/purchaseOrder/PO11111113' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'SiteID: YOURSITEID'

@@ -1,0 +1,36 @@
+## NOTE:  this is the bare minimum.  but most likely, you will need to make sure that this matches up with sales orders, etc.
+
+curl --location --request POST 'http://YOURSERVER/ctDynamicsSL/api/orders/purchasing/purchaseOrder' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+    "CpnyID": "0060",
+    "Notes": "Header Notes",
+    "PODate": "10/22/2022",
+    "PONbr": "PO11111113", 
+    "POType": "OR", 
+    "RcptStage": "N", 
+    "ShipName": "Shipping Name", 
+    "Status": "P", 
+    "VendId": "E01181",
+    "LineItems": [
+        {
+            "CuryUnitCost": 100,
+            "InvtID": "0RCRANK",
+            "Notes": "Line Item Notes",
+            "PC_Flag": "Y",
+            "ProjectID": "",
+            "PurchaseType": "GS",
+            "QtyOrd": 1,
+            "RcptPctAct": "N",
+            "RcptPctMax": 100,
+            "RcptPctMin": 100,
+            "SiteID": "",
+            "TaskID": "",
+            "UOM": "EA"
+        }
+    ]
+}'
