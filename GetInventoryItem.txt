@@ -1,0 +1,8 @@
+## This will retrieve the inventory item with the InvtID = "HON-672L-L"
+
+curl --location --request GET 'http://YOURSERVER/ctDynamicsSL/api/inventory/item/HON-672L-L' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'SiteID: YOURSITEID'

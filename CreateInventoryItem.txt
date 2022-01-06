@@ -1,0 +1,33 @@
+## this will create a new inventory item for InvtID = "BRIAN2".  If "BRIAN2" already exists, an error will occur.
+
+curl --location --request POST 'http://YOURSERVER/ctDynamicsSL/api/inventory/item' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+    "myInventory": {
+        "InvtID":"BRIAN2",
+        "ClassID": "FILCAB",
+        "DfltPOUnit": "EA",
+        "DfltSalesAcct": "1030",
+        "DfltSite": "LA",
+        "DfltSOUnit": "EA",
+        "DfltWhseLoc": "02B04",
+        "InvtAcct": "1030",
+        "InvtSub": "000000000000",
+        "InvtType": "F",
+        "LotSerTrack": "NN",
+        "PPVAcct": "1030",
+        "ReplMthd": "Q",
+        "Source": "P",
+        "StkUnit": "EA",
+        "TaxCat": "TAXABLE",
+        "TranStatusCode": "AC",
+        "ValMthd": "T"
+    },
+    "myINDfltSites":{
+        "DfltSiteID":"LA"
+    }
+}'

@@ -1,0 +1,13 @@
+## This will update the existing inventory item with the InvtID = "BRIAN2".  This will ONLY update the Descr (Description) of the item
+
+curl --location --request PATCH 'http://YOURSERVER/ctDynamicsSL/api/inventory/item/BRIAN2' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic YOURAUTH' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'SiteID: YOURSITEID'
+--data-raw '{
+    "myInventory": {
+        "Descr": "Brian'\''s Favorite Product"
+    }
+}'
