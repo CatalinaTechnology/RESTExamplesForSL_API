@@ -1,0 +1,39 @@
+curl --location 'http://catalina.local/ctDynamicsSL/api/financial/accountsReceivable/invoiceAndMemo' \
+--header 'SiteID: YOURSITEID' \
+--header 'CpnyID: YOURCPNYID' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic YOUR_AUTH' \
+--data '{
+    "myARDoc":{
+        "CpnyID": "YOURCPNYID",
+        "CustId": "C300",
+        "BankAcct": "1110",
+        "BankSub": "01100AA00001",
+        "DocType": "IN",
+        "DocDate":"05/24/2023",
+        "DueDate":"06/24/2023",
+        "Terms":"02",
+        "CuryOrigDocAmt":35,
+        "CuryDocBal":35
+    },
+    "myARTran":[
+        {
+            "Acct": "3030",
+            "Sub": "01100AA00001",
+            "TranType": "IN",
+            "Qty":1,
+            "CuryUnitPrice":22,
+            "CuryTranAmt":22,
+            "TranDesc":"New screen door replacement"
+        },
+        {
+            "Acct": "3030",
+            "Sub": "01100AA00001",
+            "TranType": "IN",
+            "Qty":1,
+            "CuryUnitPrice":13,
+            "CuryTranAmt":13,
+            "TranDesc":"Rubber Caulking around door frame"
+        }
+    ]
+}'
