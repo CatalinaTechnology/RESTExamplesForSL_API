@@ -1,3 +1,7 @@
+********************************
+**** NOTE:  only add the TaxId?? items as needed.  Make sure you have a valid TaxId code
+********************************
+
 curl --location 'http://catalina.local/ctDynamicsSL/api/financial/accountsReceivable/invoiceAndMemo' \
 --header 'SiteID: YOURSITEID' \
 --header 'CpnyID: YOURCPNYID' \
@@ -14,7 +18,11 @@ curl --location 'http://catalina.local/ctDynamicsSL/api/financial/accountsReceiv
         "DueDate":"06/24/2023",
         "Terms":"02",
         "CuryOrigDocAmt":35,
-        "CuryDocBal":35
+        "CuryDocBal":35,
+        "TaxId00": "string",
+        "TaxId01": "string",
+        "TaxId02": "string",
+        "TaxId03": "string"
     },
     "myARTran":[
         {
