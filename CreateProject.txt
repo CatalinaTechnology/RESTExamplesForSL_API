@@ -1,0 +1,17 @@
+curl --location 'http://{yourServer}/ctDynamicsSL/api/project/controller/project' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {basicAuth}' \
+--header 'CpnyID: {cpnyID}' \
+--header 'SiteID: {SiteID}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "myPJPROJ":{
+        "project":"BB00002",
+        "project_desc": "Bay Bridge Rennovation",
+        "notes":"Repaint Bridge to red",
+        "customer":"C300",
+        "glsubacct":"CO0000000000",
+        "labor_gl_acct":"4050"
+
+    }
+}'
