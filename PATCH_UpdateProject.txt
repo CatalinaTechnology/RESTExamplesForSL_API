@@ -1,0 +1,16 @@
+#This will upodate the "user2" field of the project as well as project date.
+
+curl --location --request PATCH 'http://{yourServer}/ctDynamicsSL/api/project/controller/project/{projectID}' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {basicAuth}' \
+--header 'CpnyID: {cpnyID}' \
+--header 'SiteID: {SiteID}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "myPJPROJ":{
+      "user2":"Testing updating user2"
+    },
+    "myPJPROJEX":{
+        "proj_date1": "2023-01-01T00:00:00"
+    }
+}'
