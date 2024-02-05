@@ -1,0 +1,4 @@
+curl --location 'http://{yourServer}/ctDynamicsSLWebApi/api/project/controller/project/{projectID}' \
+--header 'Authorization: Basic {basicAuth}=' \
+--header 'SiteID: {SiteID}' \
+--header 'CpnyID: {CpnyID}'
