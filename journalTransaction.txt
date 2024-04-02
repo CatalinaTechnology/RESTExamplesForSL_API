@@ -1,0 +1,29 @@
+curl --location 'http://{{serverURL}}/ctDynamicsSL/api/financial/generalLedger/journal' \
+--header 'Authorization: Basic {{basicAuth}}' \
+--header 'Cache-Control: no-cache' \
+--header 'Content-Type: application/json' \
+--header 'CpnyID: {{cpnyID}}' \
+--header 'SiteID: {{siteID}}' \
+--data '{
+  "myBatch": {
+    "CpnyID": "{{cpnyID}}"
+  },
+  "myGLTran": [
+    {
+      "CpnyID": "{{cpnyID}}",
+      "Acct": "1030",
+      "Sub":"000000000000",
+      "CuryId": "USD",
+      "BaseCuryID": "USD",
+      "CuryCrAmt": 100
+    },
+    {
+      "CpnyID": "{{cpnyID}}",
+      "Acct": "1030",
+      "Sub":"000000000000",
+      "CuryId": "USD",
+      "BaseCuryID": "USD",
+      "CuryCrAmt": 25
+    }
+  ]
+}'
