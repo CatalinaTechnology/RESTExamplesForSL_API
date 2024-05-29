@@ -1,0 +1,53 @@
+For addresses, it is a separate call.  REMEMBER, this is my database, not yours. So, my data will be different.
+
+This is how you retrieve addresses for a project using GET:
+(make sure you change values for things like your server name, authorization, CpnyID, and SiteID. Also, project CO990001 is in my database, not yours)
+
+curl –location --request GET 'http://YOURSERVERNAME/ctDynamicsSL/api/project/controller/project/CO990001/address' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {yourauthhere}' \
+--header 'CpnyID: {YourCpnyIDHere}' \
+--header 'SiteID: {YourSiteIDHere}' \
+--header 'Content-Type: application/json'
+
+
+This is how you would save an address.  NOTE:  you will need to know what type of address type you will need to know which code values to use.  The one below is in my database.  Probably does NOT exist in yours. Also, you can only have 1 address for the project for each addr_type_cd address type. In this case, I am using value “C1” which is in MY database. If I try to do a second post, it will fail and tell me that I need to do a PATCH.  Also, it is mandatory to enter “PR” for the addr_key_cd field. so, always make sure you do that as a constant.
+
+curl --location 'http://YOURSERVERNAME/ctDynamicsSL/api/project/controller/project/CO990001/address' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {yourauthhere}' \
+--header 'CpnyID: {YourCpnyIDHere}' \
+--header 'SiteID: {YourSiteIDHere}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "addr_key_cd": "PR",
+    "addr_type_cd": "C2",
+    "addr1": "306 N. Catalina Ave",
+    "addr2": "#111",
+    "city": "Redondo Beach",
+    "comp_name": "Brians Company",
+    "country": "US",
+    "email": brian@catalinatechnology.com,
+    "fax": "310-222-2121",
+    "phone": "310-555-1212",
+    "state": "CA",
+    "title": "Jr. Birdman",
+    "zip": "90210"
+}'
+
+
+
+This is how you would patch an address. In this case, I am only updating Addr1: 
+(NOTE: remember, this is my data. C2 is an address type in my database.  You will need to find out what to use in yours. Also, CO990001 is a project in my database, not yours.)
+
+curl --location --request PATCH 'http://YOURSERVERNAME/ctDynamicsSL/api/project/controller/project/CO990001/address/C2' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {yourauthhere}' \
+--header 'CpnyID: {YourCpnyIDHere}' \
+--header 'SiteID: {YourSiteIDHere}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "addr_type_cd": "C2",
+    "addr1": "Changed Addr1 only!!!"
+}'
+
