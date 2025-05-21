@@ -1,0 +1,44 @@
+curl --location 'http://{{serverName}}/api/service/serviceCall' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic {{basic_auth}}' \
+--header 'CpnyID: {{CpnyID}}' \
+--header 'SiteID: {{SiteID}}' \
+--header 'Content-Type: application/json' \
+--data '{
+  "mySMServCall": {
+    "notes": "Header Notes",
+    "AssignEmpID": "ARNOLDM",
+    "BranchID": "LA",
+    "CallStatus": "ASSIGNED",
+    "CallType": "AC",
+    "cmbInvoiceType": "T",
+    "CpnyID": "0060",
+    "CustomerId": "C300",
+    "CustPromiseTimeMi": "1328",
+    "Latitude": "",
+    "Longitude": "",
+    "PerEnt": "199912",
+    "ProjectID": "EN123000",
+    "PromiseTimeAMPM": "P",
+    "PromiseTimeTOAMPM": "P",
+    "PromTimeFrom": "0128",
+    "PromTimeTo": "0328",
+    "ServiceCallDateProm": "2015-07-16T00:00:00",
+    "ServiceCallDuration": "S",
+    "ServiceCallPriority": "2",
+    "ServiceCallStatus": "R",
+    "ServiceCallTime": "1030",
+    "ShiptoId": "DEFAULT"
+  },
+  "mysmServFault": [
+  	{
+  		"FaultCodeId": "1111",
+  		"Empid": "ARNOLD",
+  		"Notes": "Temperature went to 11",
+  		"EquipID": "EQ1234"
+  	}
+  	],
+  "serviceCallNote": {
+	"sNoteText": "Temperatures are hot!"
+  }
+}'
